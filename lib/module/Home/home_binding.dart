@@ -1,3 +1,4 @@
+import 'package:bettereats_mobile/module/Home/home_controller.dart';
 import 'package:get/get.dart';
 
 
@@ -10,5 +11,6 @@ class HomeBinding extends Bindings {
     //     pocket: FPPocket(),
     //   ),
     // );
+    Get.put(HomeController());
   }
 }
