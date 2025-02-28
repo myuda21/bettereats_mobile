@@ -4,4 +4,5 @@ class AppRoutes {
   AppRoutes._();
 
   static const HOME = '/home';
+  static const CALCULATOR = '/calculator';
 }
