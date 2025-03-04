@@ -1,4 +1,7 @@
+import 'package:bettereats_mobile/core/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
 class MenuDrawer extends StatelessWidget {
@@ -28,7 +31,7 @@ class MenuDrawer extends StatelessWidget {
             leading: const Icon(LucideIcons.calculator),
             title: const Text("Calculator"),
             onTap: () {
-              Navigator.pop(context);
+              Get.offAndToNamed(AppRoutes.CALCULATOR);
             },
           ),
           ListTile(
