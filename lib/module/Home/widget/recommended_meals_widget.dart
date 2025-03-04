@@ -38,7 +38,7 @@ class RecommendedMealsWidget extends StatelessWidget {
                       MealItemWidget(
                         image: meal["image"] ?? "",
                         title: meal["name"] ?? "",
-                        description: meal["description"], // Ambil deskripsi
+                        description: meal["description"],
                       ),
                       if (index < controller.recommendedMeals.length - 1)
                         Container(height: 1, color: Colors.grey, margin: EdgeInsets.symmetric(vertical: 5),)
@@ -52,7 +52,7 @@ class RecommendedMealsWidget extends StatelessWidget {
 
             ElevatedButton(
               onPressed: () {
-                // Navigasi ke halaman pencarian
+                //TODO: Navigasi ke halaman pencarian
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.green,

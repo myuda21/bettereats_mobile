@@ -39,17 +39,17 @@ class HomeController extends GetxController {
       },
       {
         "name": "Quinoa & Avocado Bowl",
-        "image": "assets/images/quinoa_bowl.png",
+        "image": AppImages.bread,
         "description": "Makanan sehat dengan quinoa dan alpukat."
       },
       {
         "name": "Salmon with Asparagus",
-        "image": "assets/images/salmon_asparagus.png",
+        "image": AppImages.bread,
         "description": "Salmon panggang dengan asparagus segar."
       },
       {
         "name": "Vegan Buddha Bowl",
-        "image": "assets/images/buddha_bowl.png",
+        "image": AppImages.bread,
         // Tidak ada deskripsi
       },
     ];
