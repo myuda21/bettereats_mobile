@@ -1,7 +1,10 @@
+import 'package:bettereats_mobile/core/widgets/custom_appbar.dart';
+import 'package:bettereats_mobile/module/Home/widget/circular_card_widget.dart';
+import 'package:bettereats_mobile/module/Home/widget/meal_plan_card_widget.dart';
 import 'package:bettereats_mobile/module/Home/widget/menu_drawer.dart';
+import 'package:bettereats_mobile/module/Home/widget/recommended_meals_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../core/widgets/custom_appbar.dart';
 import 'home_controller.dart';
 
 class HomeScreen extends GetView<HomeController> {
@@ -21,25 +24,34 @@ class HomeScreen extends GetView<HomeController> {
             ),
           ];
         },
-        body: ListView.builder(
-          padding: const EdgeInsets.all(16),
-          itemCount: 20,
-          itemBuilder: (context, index) {
-            return Card(
-              elevation: 3,
-              margin: const EdgeInsets.only(bottom: 12),
-              child: ListTile(
-                leading: Icon(Icons.fastfood, color: Colors.green.shade700),
-                title: Text("Menu Item ${index + 1}",
-                    style: const TextStyle(fontWeight: FontWeight.bold)),
-                subtitle: Text("Deskripsi menu ke-${index + 1}"),
-                trailing: const Icon(Icons.arrow_forward_ios, size: 16),
-                onTap: () {
-                  Get.snackbar("Menu Dipilih", "Kamu memilih menu ke-${index + 1}");
-                },
-              ),
-            );
-          },
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                CircularCardWidget(
+                  title: "Total Daily Energy Expenditure",
+                  value: "1892",
+                  unit: "kCal",
+                  progress: 0.75,
+                  buttonText: "Update",
+                ),
+                const SizedBox(height: 16),
+                CircularCardWidget(
+                  title: "Body Mass Index",
+                  value: "0",
+                  unit: "kg/m²",
+                  progress: 0.0,
+                  buttonText: "Update",
+                  showWarning: true,
+                ),
+                const SizedBox(height: 16),
+                MealPlanCardWidget(),
+                const SizedBox(height: 16),
+                RecommendedMealsWidget(),
+              ],
+            ),
+          ),
         ),
       ),
     );
