@@ -1,3 +1,5 @@
+import 'package:bettereats_mobile/core/widgets/FLTextField.dart';
+import 'package:bettereats_mobile/core/widgets/FLTextView.dart';
 import 'package:bettereats_mobile/module/calculator/calculator_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,21 +15,27 @@ class BMIScreen extends GetView<CalculatorController> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          TextField(
-            decoration: const InputDecoration(
-              labelText: "Height (cm)",
-              border: OutlineInputBorder(),
-            ),
-            keyboardType: TextInputType.number,
+          FLTextView(
+            text: "BMI Calculator",
+            fontSize: 24,
+            color: Colors.green,
+          ),
+          const SizedBox(height: 5),
+          FLTextView(
+            text: "Find out how healthy your body is.",
+            fontSize: 16,
+            color: Colors.green,
+          ),
+          const SizedBox(height: 20),
+          FLTextField(
+            label: "Height (Cm)",
+            hintText: "Height (Cm)",
             onChanged: (value) => controller.height.value = value,
           ),
           const SizedBox(height: 10),
-          TextField(
-            decoration: const InputDecoration(
-              labelText: "Weight (kg)",
-              border: OutlineInputBorder(),
-            ),
-            keyboardType: TextInputType.number,
+          FLTextField(
+            label: "Weight (kg)",
+            hintText: "Weight (kg)",
             onChanged: (value) => controller.weight.value = value,
           ),
           const SizedBox(height: 16),

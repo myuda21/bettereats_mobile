@@ -19,16 +19,12 @@ class CalculatorScreen extends GetView<CalculatorController> {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 🟢 Tambahkan elemen sebelum TabBar
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    "Pilih kalkulator kesehatan:",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
+                  //TODO: tambahkan elemen jika mau
                   const SizedBox(height: 8),
                 ],
               ),
@@ -37,11 +33,11 @@ class CalculatorScreen extends GetView<CalculatorController> {
             const TabBar(
               labelColor: Colors.black,
               tabs: [
-                Tab(text: "BMI", ),
+                Tab(text: "BMI"),
                 Tab(text: "TDEE"),
               ],
             ),
-            
+
             Expanded(
               child: const TabBarView(
                 children: [
