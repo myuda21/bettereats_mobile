@@ -38,7 +38,7 @@ class MenuDrawer extends StatelessWidget {
             leading: const Icon(LucideIcons.search),
             title: const Text("Search Meal"),
             onTap: () {
-              Navigator.pop(context);
+              Get.offAndToNamed(AppRoutes.SEARCH_MEAL);
             },
           ),
           ListTile(

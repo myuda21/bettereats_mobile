@@ -3,6 +3,8 @@ import 'package:bettereats_mobile/module/Home/home_binding.dart';
 import 'package:bettereats_mobile/module/Home/home_screen.dart';
 import 'package:bettereats_mobile/module/calculator/calculator_binding.dart';
 import 'package:bettereats_mobile/module/calculator/calculator_screen.dart';
+import 'package:bettereats_mobile/module/food/search_meal_binding.dart';
+import 'package:bettereats_mobile/module/food/search_meal_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppPages {
@@ -20,6 +22,11 @@ class AppPages {
       name: AppRoutes.CALCULATOR,
       page: () => const CalculatorScreen(),
       binding: CalculatorBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.SEARCH_MEAL,
+      page: () => const SearchMealScreen(),
+      binding: SearchMealBinding(),
     ),
   ];
 }
