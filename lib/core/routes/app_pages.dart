@@ -5,4 +5,5 @@ class AppRoutes {
 
   static const HOME = '/home';
   static const CALCULATOR = '/calculator';
+  static const SEARCH_MEAL = '/search-meal';
 }
