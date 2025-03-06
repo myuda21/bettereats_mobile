@@ -6,6 +6,9 @@ class FLTextView extends StatelessWidget {
   final double fontSize;
   final FontWeight fontWeight;
   final TextAlign textAlign;
+  final TextOverflow? overflow;
+  final int? maxLines;
+
 
   const FLTextView({
     super.key,
@@ -14,6 +17,8 @@ class FLTextView extends StatelessWidget {
     this.fontSize = 14.0,
     this.fontWeight = FontWeight.normal,
     this.textAlign = TextAlign.start,
+    this.overflow,
+    this.maxLines,
   });
 
   @override
@@ -26,6 +31,8 @@ class FLTextView extends StatelessWidget {
         fontSize: fontSize,
         fontWeight: fontWeight,
       ),
+      overflow: overflow,
+      maxLines: maxLines,
     );
   }
 }

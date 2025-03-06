@@ -9,7 +9,7 @@ class SearchMealScreen extends GetView<SearchMealController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Food List'),backgroundColor: Colors.green,),
+      appBar: AppBar(title: const Text('Search Meal'),backgroundColor: Colors.green,),
       body: Column(
         children: [
           _buildFilterBar(),

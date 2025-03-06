@@ -1,5 +1,7 @@
+import 'package:bettereats_mobile/core/widgets/FLTextView.dart';
 import 'package:bettereats_mobile/module/food/search_meal_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:lucide_icons/lucide_icons.dart';
 
 class FoodCardWidget extends StatelessWidget {
   final Food food;
@@ -45,11 +47,12 @@ class FoodCardWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  food.title,
-                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                  maxLines: 1,
+                FLTextView(
+                  text: food.title,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
                   overflow: TextOverflow.ellipsis,
+                  
                 ),
                 const SizedBox(height: 5),
                 Wrap(
@@ -65,10 +68,10 @@ class FoodCardWidget extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    _buildNutrientInfo(Icons.local_fire_department, food.calories),
-                    _buildNutrientInfo(Icons.fitness_center, food.protein),
-                    _buildNutrientInfo(Icons.emoji_food_beverage, food.fat),
-                    _buildNutrientInfo(Icons.grass, food.carbs),
+                    _buildNutrientInfo(LucideIcons.flame, food.calories, Colors.redAccent),
+                    _buildNutrientInfo(LucideIcons.beef, food.protein, Colors.red),
+                    _buildNutrientInfo(LucideIcons.wheat, food.fat, Colors.orange),
+                    _buildNutrientInfo(LucideIcons.droplet, food.carbs, Colors.blue),
                   ],
                 ),
                 const SizedBox(height: 8),
@@ -88,10 +91,10 @@ class FoodCardWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildNutrientInfo(IconData icon, int value) {
+  Widget _buildNutrientInfo(IconData icon, int value, Color? color) {
     return Row(
       children: [
-        Icon(icon, size: 24, color: Colors.green),
+        Icon(icon, size: 24, color: color ?? Colors.green),
         const SizedBox(width: 4),
         Text('$value', style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
       ],
