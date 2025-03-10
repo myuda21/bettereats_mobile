@@ -1,6 +1,8 @@
 import 'package:bettereats_mobile/core/routes/app_pages.dart';
 import 'package:bettereats_mobile/module/Home/home_binding.dart';
 import 'package:bettereats_mobile/module/Home/home_screen.dart';
+import 'package:bettereats_mobile/module/article/article_binding.dart';
+import 'package:bettereats_mobile/module/article/article_screen.dart';
 import 'package:bettereats_mobile/module/calculator/calculator_binding.dart';
 import 'package:bettereats_mobile/module/calculator/calculator_screen.dart';
 import 'package:bettereats_mobile/module/food/search_meal_binding.dart';
@@ -27,6 +29,11 @@ class AppPages {
       name: AppRoutes.SEARCH_MEAL,
       page: () => const SearchMealScreen(),
       binding: SearchMealBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.ARTICLES,
+      page: () => const ArticleScreen(),
+      binding: ArticleBinding(),
     ),
   ];
 }
