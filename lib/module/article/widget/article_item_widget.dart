@@ -1,3 +1,4 @@
+import 'package:bettereats_mobile/core/widgets/FLTextView.dart';
 import 'package:bettereats_mobile/module/article/model/list_article_model.dart';
 import 'package:flutter/material.dart';
 
@@ -41,21 +42,24 @@ class ArticleItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    article.title,
-                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  FLTextView(
+                    text: article.title,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
                   ),
                   const SizedBox(height: 4),
-                  Text(
-                    article.description,
+                  FLTextView(
+                    text: article.description,
+                    fontSize: 14,
+                    color: Colors.grey,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(fontSize: 14, color: Colors.grey),
                   ),
                   const SizedBox(height: 4),
-                  Text(
-                    article.date,
-                    style: const TextStyle(fontSize: 12, color: Colors.grey),
+                  FLTextView(
+                    text: article.date,
+                    fontSize: 12,
+                    color: Colors.grey,
                   ),
                 ],
               ),

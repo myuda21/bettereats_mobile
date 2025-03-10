@@ -1,3 +1,4 @@
+import 'package:bettereats_mobile/core/widgets/FLTextView.dart';
 import 'package:bettereats_mobile/module/article/article_controller.dart';
 import 'package:bettereats_mobile/module/article/widget/article_item_widget.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,7 @@ class ArticleScreen extends GetView<ArticleController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Articles')),
+      appBar: AppBar(title: const FLTextView(text: 'Articles'),backgroundColor: Colors.green,),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Obx(
