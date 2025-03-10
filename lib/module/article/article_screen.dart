@@ -10,7 +10,7 @@ class ArticleScreen extends GetView<ArticleController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const FLTextView(text: 'Articles'),backgroundColor: Colors.green,),
+      appBar: AppBar(title: const FLTextView(text: 'Articles', color: Colors.white, fontSize: 16,),backgroundColor: Colors.green,),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Obx(
