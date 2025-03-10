@@ -59,7 +59,7 @@ class MenuDrawer extends StatelessWidget {
             leading: const Icon(LucideIcons.newspaper),
             title: const Text("Article"),
             onTap: () {
-              Navigator.pop(context);
+              Get.offAndToNamed(AppRoutes.ARTICLES);
             },
           ),
           ListTile(
