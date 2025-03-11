@@ -7,4 +7,5 @@ class AppRoutes {
   static const CALCULATOR = '/calculator';
   static const SEARCH_MEAL = '/search-meal';
   static const ARTICLES = '/articles';
+  static const COMMUNITY = '/community';
 }
