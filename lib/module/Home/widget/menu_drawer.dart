@@ -52,7 +52,7 @@ class MenuDrawer extends StatelessWidget {
             leading: const Icon(LucideIcons.users),
             title: const Text("Community"),
             onTap: () {
-              Navigator.pop(context);
+              Get.offAndToNamed(AppRoutes.COMMUNITY);
             },
           ),
           ListTile(
