@@ -5,6 +5,8 @@ import 'package:bettereats_mobile/module/article/article_binding.dart';
 import 'package:bettereats_mobile/module/article/article_screen.dart';
 import 'package:bettereats_mobile/module/calculator/calculator_binding.dart';
 import 'package:bettereats_mobile/module/calculator/calculator_screen.dart';
+import 'package:bettereats_mobile/module/community/community_binding.dart';
+import 'package:bettereats_mobile/module/community/community_screen.dart';
 import 'package:bettereats_mobile/module/food/search_meal_binding.dart';
 import 'package:bettereats_mobile/module/food/search_meal_screen.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
@@ -34,6 +36,11 @@ class AppPages {
       name: AppRoutes.ARTICLES,
       page: () => const ArticleScreen(),
       binding: ArticleBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.COMMUNITY,
+      page: () => const CommunityScreen(),
+      binding: CommunityBinding(),
     ),
   ];
 }
