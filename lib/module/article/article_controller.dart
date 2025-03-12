@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 class ArticleController extends GetxController {
   var articles = <Article>[].obs;
+  var isLoading = true.obs;
 
   @override
   void onInit() {
@@ -11,6 +12,7 @@ class ArticleController extends GetxController {
   }
 
   void fetchArticles() {
+    isLoading.value;
     articles.assignAll([
       Article(
         title: 'Pengertian BMI dan TDEE: Apa yang Perlu Anda Ketahui',
@@ -23,5 +25,6 @@ class ArticleController extends GetxController {
         date: 'January 6, 2025',
       ),
     ]);
+    isLoading.value = false;
   }
 }
