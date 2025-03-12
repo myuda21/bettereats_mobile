@@ -88,15 +88,21 @@ class CommunityScreen extends GetView<CommunityController> {
               children: post.replies.map((reply) => ListTile(title: Text(reply))).toList(),
             ),
           ),
-            controller: replyController,
-            decoration: InputDecoration(
-              hintText: "Write a reply...",
-              suffixIcon: IconButton(
-                icon: Icon(Icons.send),
-                onPressed: () {
-                  post.replies.add(replyController.text);
-                  Get.back();
-                },
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: replyController,
+              decoration: InputDecoration(
+                hintText: "Write a reply...",
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.send),
+                  onPressed: () {
+                    if (replyController.text.trim().isNotEmpty) {
+                      post.replies.add(replyController.text);
+                    }
+                    Get.back();
+                  },
+                ),
               ),
             ),
           ),
