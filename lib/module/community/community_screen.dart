@@ -9,9 +9,32 @@ class CommunityScreen extends GetView<CommunityController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Community Page"), backgroundColor: Colors.green,),
-      body: Obx(
-            () => ListView.builder(
+      appBar: AppBar(
+        title: Text("Community Page"),
+        backgroundColor: Colors.green,
+      ),
+      body: Obx(() {
+        if (controller.isLoading.value) {
+          return Center(child: CircularProgressIndicator());
+        }
+
+        if (controller.posts.isEmpty) {
+          return Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.chat_bubble_outline, size: 80, color: Colors.grey),
+                SizedBox(height: 10),
+                Text(
+                  "Belum ada postingan",
+                  style: TextStyle(fontSize: 16, color: Colors.grey),
+                ),
+              ],
+            ),
+          );
+        }
+
+        return ListView.builder(
           itemCount: controller.posts.length,
           itemBuilder: (context, index) {
             final post = controller.posts[index];
@@ -23,8 +46,8 @@ class CommunityScreen extends GetView<CommunityController> {
               ),
             );
           },
-        ),
-      ),
+        );
+      }),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showCreatePostDialog(context),
         child: Icon(Icons.create),
@@ -42,7 +65,9 @@ class CommunityScreen extends GetView<CommunityController> {
         actions: [
           TextButton(
             onPressed: () {
-              controller.addPost(postController.text);
+              if (postController.text.trim().isNotEmpty) {
+                controller.addPost(postController.text);
+              }
               Get.back();
             },
             child: Text("Post"),
@@ -63,16 +88,21 @@ class CommunityScreen extends GetView<CommunityController> {
               children: post.replies.map((reply) => ListTile(title: Text(reply))).toList(),
             ),
           ),
-          TextField(
-            controller: replyController,
-            decoration: InputDecoration(
-              hintText: "Write a reply...",
-              suffixIcon: IconButton(
-                icon: Icon(Icons.send),
-                onPressed: () {
-                  post.replies.add(replyController.text);
-                  Get.back();
-                },
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: replyController,
+              decoration: InputDecoration(
+                hintText: "Write a reply...",
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.send),
+                  onPressed: () {
+                    if (replyController.text.trim().isNotEmpty) {
+                      post.replies.add(replyController.text);
+                    }
+                    Get.back();
+                  },
+                ),
               ),
             ),
           ),
