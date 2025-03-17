@@ -1,6 +1,14 @@
 # bettereats_mobile
-
 A new Flutter project.
+
+## Application Documentation
+![alt text](https://github.com/myuda21/bettereats_mobile/blob/main/assets/documentation/Screenshot%202025-03-16%20205356.png?raw=true)
+![alt text](https://github.com/myuda21/bettereats_mobile/blob/main/assets/documentation/Screenshot%202025-03-16%20205525.png?raw=true)
+![alt text](https://github.com/myuda21/bettereats_mobile/blob/main/assets/documentation/Screenshot%202025-03-16%20205556.png?raw=true)
+![alt text](https://github.com/myuda21/bettereats_mobile/blob/main/assets/documentation/Screenshot%202025-03-16%20205614.png?raw=true)
+![alt text](https://github.com/myuda21/bettereats_mobile/blob/main/assets/documentation/Screenshot%202025-03-16%20205807.png?raw=true)
+![alt text](https://github.com/myuda21/bettereats_mobile/blob/main/assets/documentation/Screenshot%202025-03-16%20210018.png?raw=true)
+![alt text](https://github.com/myuda21/bettereats_mobile/blob/main/assets/documentation/Screenshot%202025-03-16%20210109.png?raw=true)
 
 ## Getting Started
 
